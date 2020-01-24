@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="horizontal"
+            >
+            <View
+                android:id="@+id/photo"
+                android:transitionName="photo"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/curve_yellow"
+                android:layout_marginRight="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="CANDY\nBUST"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                />
+
+            <com.example.animationtest.CloseButtonBig
+                android:id="@+id/close"
+                android:layout_width="20dp"
+                android:layout_height="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What is Lorem ipsum? Lorem ipsum is simply dummy text of the printing and typesetting industry"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="READ MORE"
+            android:textColor="@color/green"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            >
+            <View
+                android:id="@+id/card1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@color/black"
+                android:alpha=".2"
+                android:layout_weight="1"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/card2"
+                android:layout_marginRight="5dp"
+                android:layout_marginEnd="5dp"
+                android:visibility="invisible"
+                />
+
+            <View
+                android:visibility="invisible"
+                app:layout_constraintLeft_toRightOf="@id/card1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_weight="5"
+                android:id="@+id/card2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintVertical_weight=".3"
+                android:background="@color/black"
+                android:alpha=".2"
+                android:layout_weight="1"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <com.example.animationtest.DownloadButton
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:transitionName="button"
+                android:id="@+id/download_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+            <FrameLayout
+                android:visibility="gone"
+                android:background="@drawable/curve_blue"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:transitionName="button"
+                android:id="@+id/play_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="PLAY"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    />
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/second_frame" android:visibility="gone" android:id="@+id/second_frame"/>
+
+    <include layout="@layout/third_frame" android:visibility="gone" android:id="@+id/third_frame"/>
+
+     <include layout="@layout/fourth_frame" android:visibility="gone" android:id="@+id/fourth_frame"/>
+
+
+</FrameLayout>
